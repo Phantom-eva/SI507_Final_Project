@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
+body{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	background-image: url('../static/background.jpg');
+}
+.first_block{
+	background-color: cadetblue;
+	margin-left: 0%;
+	margin-top: 0%;
+	width: 100%;
+	height: auto;
+	padding: 0.5em 0 0.5em 0;
+}
+.first_doc{
+	margin-left: 37.5%;
+	width:25%;
+}

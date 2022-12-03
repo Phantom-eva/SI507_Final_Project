@@ -3,11 +3,14 @@ import json
 import requests
 from flask import Flask, render_template, request
 from wsgiserver import WSGIServer
+from serpapi import GoogleSearch
+from api_secrets import GOOGLE_SEARCH_API, TMDB_API_KEY, OMDB_API_KEY
+
 
 CACHE_FILENAME = "./cache/movie_cache.json"
-TMDB_API_KEY = "1e84af3a40a9581586adbbce0d8390a1"
-OMDB_API_KEY = "48b724a0"
-GENRES = ["Action", "Adventure", "Animation", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Music", "Mystery", "Romance", "Science Fiction", "TV Movie", "Thriller", "War", "Western"]
+GENRES = ["Action", "Adventure", "Comedy", "Crime", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Thriller", "War"]
+
+Action_list = []
 
 my_cache = {}
 
@@ -24,10 +27,26 @@ class Movie():
         self.rated = rated
         self.average_rating = average_rating
         self.url = url
+        if json != None:
+            self.title = title
+            self.genres = genres
+            self.imdb_id = imdb_id
+            self.language = language
+            self.director = director
+            self.actor = actor
+            self.release_date = release_date
+            self.runtime = runtime
+            self.rated = rated
+            self.url = url
 
- 
-class Question():
-    pass
+
+class Question:
+   def __init__(self, data):
+      self.left = None
+      self.right = None
+      self.data = data
+   def PrintTree(self):
+      print(self.data)
 
 def open_cache():
     try:
@@ -47,9 +66,36 @@ def save_cache(cache_dict):
 
 def get_data():
     base_url = "https://api.themoviedb.org/3/movie/76341"
+    para = {
+        "with_genre": "Action"
+    }
+    r = requests.get(url=base_url,params=para)
+    data = r.json()
+
 
 def process_data():
     pass
+
+def get_local_cinema_data(location):
+    params = {
+        "q": "eternals theater",
+        "location": location,
+        "hl": "en",
+        "gl": "us",
+        "api_key": GOOGLE_SEARCH_API
+    }
+
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    showtimes = results["showtimes"]
+
+
+# construct question tree
+def constrct_question_tree():
+    node_1 = Question("Do you want to watch an action movie?") 
+    node_1.left = Question(Action_list)
+    node_1.right = Question("Do you want to watch an action movie?")
+
 
 def main():
     pass
@@ -57,19 +103,26 @@ def main():
 app = Flask(__name__)
 
 @app.route("/")
-def hello() -> str:
-    return render_template("templates/index.html")
+def index():
+    return render_template("index.html")
 
-@app.route("/")
-def hello() -> str:
-    return "Hello World"
+@app.route("/search_by_keywords")
+def s_keywords():
+    return render_template("search_by_keywords.html")
+
+@app.route("/search_by_filter")
+def s_filter():
+    return render_template("search_by_filter.html")
+
+@app.route("/search_local_theater")
+def s_local():
+    return render_template("search_local_theater.html")
 
 
 if __name__ == '__main__':
     print('starting Flask app', app.name)
-    # Debug/Develpment mode
-    # update_static_images()
-    # app.run(debug=True)
+    # # Debug/Develpment mode
+    app.run(debug=True)
 
     # # Production mode
     # http_server = WSGIServer(('', 5000),app)
