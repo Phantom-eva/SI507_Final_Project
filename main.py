@@ -5,14 +5,18 @@ from flask import Flask, render_template, request
 from wsgiserver import WSGIServer
 from serpapi import GoogleSearch
 from api_secrets import GOOGLE_SEARCH_API, TMDB_API_KEY, OMDB_API_KEY
+from cache import open_cache, save_cache
+from tree import simplePlay, playLeaf, isLeaf, yes
 
 
 CACHE_FILENAME = "./cache/movie_cache.json"
-GENRES = ["Action", "Adventure", "Comedy", "Crime", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Thriller", "War"]
+GENRES = ["Action", "Adventure", "Comedy", "Crime", "Drama", "Mystery", "Romance", "Science Fiction", "Thriller", "War"]
+
 
 Action_list = []
 
 my_cache = {}
+
 
 class Movie():
     def __init__(self, title = "no title", genres = "no genre", imdb_id = "no imdb id", language = "no language", release_date = "no release date", runtime = "no time", rated = "Not rated", director = "no director", actor = "no actor", average_rating = "no rating", url = "no url", json = None):
@@ -40,7 +44,7 @@ class Movie():
             self.url = url
 
 
-class Question:
+class treeNode:
    def __init__(self, data):
       self.left = None
       self.right = None
@@ -48,21 +52,6 @@ class Question:
    def PrintTree(self):
       print(self.data)
 
-def open_cache():
-    try:
-        cache_file = open(CACHE_FILENAME, 'r')
-        cache_contents = cache_file.read()
-        cache_dict = json.loads(cache_contents)
-        cache_file.close()
-    except:
-        cache_dict = {}
-    return cache_dict
-
-def save_cache(cache_dict):
-    dumped_json_cache = json.dumps(cache_dict)
-    fw = open(CACHE_FILENAME,"w")
-    fw.write(dumped_json_cache)
-    fw.close() 
 
 def get_data():
     base_url = "https://api.themoviedb.org/3/movie/76341"
@@ -71,10 +60,13 @@ def get_data():
     }
     r = requests.get(url=base_url,params=para)
     data = r.json()
+    return data
 
 
-def process_data():
-    pass
+def process_data(data):
+    movie_list = []
+    return movie_list
+
 
 def get_local_cinema_data(location):
     params = {
@@ -89,12 +81,31 @@ def get_local_cinema_data(location):
     results = search.get_dict()
     showtimes = results["showtimes"]
 
+def sort_movie_list(movie_list):
+    pass
+
 
 # construct question tree
 def constrct_question_tree():
-    node_1 = Question("Do you want to watch an action movie?") 
-    node_1.left = Question(Action_list)
-    node_1.right = Question("Do you want to watch an action movie?")
+    node_1 = treeNode("Do you want to watch an action movie?") 
+    node_2 = treeNode("Do you want to watch an adventure movie?") 
+    node_3 = treeNode("Do you want to watch an comedy movie?") 
+    node_4 = treeNode("Do you want to watch an crime movie?") 
+    node_5 = treeNode("Do you want to watch an drama movie?") 
+    node_6 = treeNode("Do you want to watch an mystery movie?")
+    node_7 = treeNode("Do you want to watch an romance movie?") 
+    node_8 = treeNode("Do you want to watch an science fiction movie?") 
+    node_9 = treeNode("Do you want to watch an thriller movie?")
+    node_10 = treeNode("Do you want to watch an war movie?")
+    node_1.right = node_2
+    node_2.right = node_3
+    node_3.right = node_4
+    node_4.right = node_5
+    node_5.right = node_6
+    node_6.right = node_7
+    node_7.right = node_8
+    node_8.right = node_9
+    node_9.right = node_10
 
 
 def main():
