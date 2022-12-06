@@ -1,3 +1,15 @@
+import numpy as np
+
+
+class treeNode:
+   def __init__(self, data):
+      self.left = None
+      self.right = None
+      self.data = data
+   def PrintTree(self):
+      print(self.data)
+
+
 def simplePlay(tree):
     """
     accept a single argument, which is a tree and plays the game once by using the tree to guide its questions
@@ -57,3 +69,27 @@ def playLeaf(tree):
         elif ans_4 == "no":
             tree = (ans_3,(tree[0], None, None), (ans_2, None, None))
         return tree, False
+
+
+
+# construct question tree
+def constrct_question_tree():
+    node_1 = treeNode("Do you want to watch an action movie?") 
+    node_2 = treeNode("Do you want to watch an adventure movie?") 
+    node_3 = treeNode("Do you want to watch an comedy movie?") 
+    node_4 = treeNode("Do you want to watch an crime movie?") 
+    node_5 = treeNode("Do you want to watch an drama movie?") 
+    node_6 = treeNode("Do you want to watch an mystery movie?")
+    node_7 = treeNode("Do you want to watch an romance movie?") 
+    node_8 = treeNode("Do you want to watch an science fiction movie?") 
+    node_9 = treeNode("Do you want to watch an thriller movie?")
+    node_10 = treeNode("Do you want to watch an war movie?")
+    node_1.right = node_2
+    node_2.right = node_3
+    node_3.right = node_4
+    node_4.right = node_5
+    node_5.right = node_6
+    node_6.right = node_7
+    node_7.right = node_8
+    node_8.right = node_9
+    node_9.right = node_10

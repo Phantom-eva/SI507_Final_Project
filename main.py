@@ -44,14 +44,7 @@ class Movie():
             self.url = url
 
 
-class treeNode:
-   def __init__(self, data):
-      self.left = None
-      self.right = None
-      self.data = data
-   def PrintTree(self):
-      print(self.data)
-
+def search_by_keywords(keywords):
 
 def get_data():
     base_url = "https://api.themoviedb.org/3/movie/76341"
@@ -85,56 +78,57 @@ def sort_movie_list(movie_list):
     pass
 
 
-# construct question tree
-def constrct_question_tree():
-    node_1 = treeNode("Do you want to watch an action movie?") 
-    node_2 = treeNode("Do you want to watch an adventure movie?") 
-    node_3 = treeNode("Do you want to watch an comedy movie?") 
-    node_4 = treeNode("Do you want to watch an crime movie?") 
-    node_5 = treeNode("Do you want to watch an drama movie?") 
-    node_6 = treeNode("Do you want to watch an mystery movie?")
-    node_7 = treeNode("Do you want to watch an romance movie?") 
-    node_8 = treeNode("Do you want to watch an science fiction movie?") 
-    node_9 = treeNode("Do you want to watch an thriller movie?")
-    node_10 = treeNode("Do you want to watch an war movie?")
-    node_1.right = node_2
-    node_2.right = node_3
-    node_3.right = node_4
-    node_4.right = node_5
-    node_5.right = node_6
-    node_6.right = node_7
-    node_7.right = node_8
-    node_8.right = node_9
-    node_9.right = node_10
-
-
+def play():
+    ans_1 = input("Do you want to search for movies that are playing at local cinemas or something else? Please enter local or else: ")
+    while(ans_1 != "local" and ans_1 != "else"):
+        ans_1 = input("Invalid input. Please enter local or else: ")
+    if ans_1 == "local":
+        location = input("Please enter your location (example: Ann Arbor, MI, USA): ")
+        get_local_cinema_data(location)
+    else:
+        ans_2 = input("Do you want to search by keywords? Please enter yes or no: ")
+        while(ans_2 != "yes" and ans_2 != "no"):
+            ans_2 = input("Invalid input. Please enter yes or no: ")
+        if ans_2 == "yes":
+            keywords = input("Please enter the keywords: ")
+            res_keywords = 
 def main():
-    pass
+    print("Hello, welcome to the movie recommendation system!")
+    play()
+    
+    
 
-app = Flask(__name__)
 
-@app.route("/")
-def index():
-    return render_template("index.html")
 
-@app.route("/search_by_keywords")
-def s_keywords():
-    return render_template("search_by_keywords.html")
 
-@app.route("/search_by_filter")
-def s_filter():
-    return render_template("search_by_filter.html")
+# using flask, under construction
 
-@app.route("/search_local_theater")
-def s_local():
-    return render_template("search_local_theater.html")
+# app = Flask(__name__)
+
+# @app.route("/")
+# def index():
+#     return render_template("index.html")
+
+# @app.route("/search_by_keywords")
+# def s_keywords():
+#     return render_template("search_by_keywords.html")
+
+# @app.route("/search_by_filter")
+# def s_filter():
+#     return render_template("search_by_filter.html")
+
+# @app.route("/search_local_theater")
+# def s_local():
+#     return render_template("search_local_theater.html")
 
 
 if __name__ == '__main__':
-    print('starting Flask app', app.name)
+    # print('starting Flask app', app.name)
     # # Debug/Develpment mode
-    app.run(debug=True)
+    # app.run(debug=True)
 
     # # Production mode
     # http_server = WSGIServer(('', 5000),app)
     # http_server.serve_forever()
+
+    main()
