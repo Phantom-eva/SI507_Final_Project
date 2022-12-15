@@ -6,8 +6,6 @@ class treeNode:
       self.left = None
       self.right = None
       self.data = data
-   def PrintTree(self):
-      print(self.data)
 
 
 def simplePlay(tree):
@@ -15,15 +13,15 @@ def simplePlay(tree):
     accept a single argument, which is a tree and plays the game once by using the tree to guide its questions
     """
     if isLeaf(tree):
-        new_str = "Is it " + tree[0] + "?"
+        new_str = tree.data
         ans_1 = yes(new_str)
         return ans_1
     else:
-        ans_2 = yes(tree[0])
+        ans_2 = yes(tree.data)
         if ans_2 == True:
-            return simplePlay(tree[1])
+            return simplePlay(tree.left)
         elif ans_2 == False:
-            return simplePlay(tree[2])
+            return simplePlay(tree.right)
 
                      
 def isLeaf(tree):
@@ -71,25 +69,48 @@ def playLeaf(tree):
         return tree, False
 
 
-
 # construct question tree
 def constrct_question_tree():
-    node_1 = treeNode("Do you want to watch an action movie?") 
-    node_2 = treeNode("Do you want to watch an adventure movie?") 
-    node_3 = treeNode("Do you want to watch an comedy movie?") 
-    node_4 = treeNode("Do you want to watch an crime movie?") 
-    node_5 = treeNode("Do you want to watch an drama movie?") 
-    node_6 = treeNode("Do you want to watch an mystery movie?")
-    node_7 = treeNode("Do you want to watch an romance movie?") 
-    node_8 = treeNode("Do you want to watch an science fiction movie?") 
-    node_9 = treeNode("Do you want to watch an thriller movie?")
-    node_10 = treeNode("Do you want to watch an war movie?")
-    node_1.right = node_2
-    node_2.right = node_3
-    node_3.right = node_4
-    node_4.right = node_5
-    node_5.right = node_6
-    node_6.right = node_7
-    node_7.right = node_8
-    node_8.right = node_9
-    node_9.right = node_10
+    question_1 = treeNode("Do you want to watch an action movie?") 
+    question_2 = treeNode("Do you want to watch an horror movie?") 
+    question_3 = treeNode("Do you want to watch an adventure movie?") 
+    question_4 = treeNode("Do you want to watch an comedy movie?") 
+    question_5 = treeNode("Do you want to watch an science fiction movie?")
+    question_6 = treeNode("Do you want to watch a movie longer than 120 minutes?")
+    question_7 = treeNode("Do you want to watch a movie released after 2018?")
+    question_1.right = question_2
+    question_1.left = question_6
+    question_2.right = question_3
+    question_2.left = question_6
+    question_3.right = question_4
+    question_3.left = question_6
+    question_4.right = question_5
+    question_4.left = question_6
+    question_5.right = question_6
+    question_5.left = question_6
+    question_6.left = question_7
+    question_6.right = question_7
+    return question_1
+
+
+Movie_list = {}
+
+
+
+def construct_movie_tree():
+    movienode_1 = treeNode(Movie_list['all'])
+    movienode_2 = treeNode(Movie_list['Action'])
+    movienode_3 = treeNode(Movie_list['not Action'])
+    movienode_4 = treeNode(Movie_list['Adventure'])
+    movienode_1.left = movienode_2
+    movienode_1.right = movienode_3
+
+
+# def main():
+#     q_1 = constrct_question_tree()
+#     simplePlay(q_1)
+
+
+
+# if __name__ == "__main__":
+#     main()
