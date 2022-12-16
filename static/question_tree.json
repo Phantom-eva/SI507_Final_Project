@@ -1,0 +1,235 @@
+{
+    "id": 1,
+    "data": "Do you want to watch an action movie?",
+    "child":[
+        {
+            "id": 2,
+            "data": "Do you want to watch a movie longer than 120 minutes?",
+            "child":[
+                {
+                   "id":3,
+                   "data": "Do you want to watch a movie released after 2015?",
+                   "child":[
+                        {
+                            "id":4,
+                            "data":["action","long_new"]
+                        },
+                        {
+                            "id":5,
+                            "data":["action","long_old"]
+                        }
+                   ]
+                },
+                {
+                    "id":6,
+                    "data": "Do you want to watch a movie released after 2015?",
+                    "child":[
+                        {
+                            "id":7,
+                            "data":["action","short_new"]
+                        },
+                        {
+                            "id":8,
+                            "data":["action","short_old"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "data": "Do you want to watch an adventure movie?",
+            "child":[
+                {
+                    "id": 10,
+                    "data": "Do you want to watch a movie longer than 120 minutes?",
+                    "child":[
+                        {
+                        "id":11,
+                        "data": "Do you want to watch a movie released after 2015?",
+                        "child":[
+                                {
+                                    "id":12,
+                                    "data":["adventure","long_new"]
+                                },
+                                {
+                                    "id":13,
+                                    "data":["adventure","long_old"]
+                                }
+                        ]
+                        },
+                        {
+                            "id":14,
+                            "data": "Do you want to watch a movie released after 2015?",
+                            "child":[
+                                {
+                                    "id":15,
+                                    "data":["adventure","short_new"]
+                                },
+                                {
+                                    "id":16,
+                                    "data":["adventure","short_old"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 17,
+                    "data":"Do you want to watch a horror movie?",
+                    "child":[
+                        {
+                            "id":18,
+                            "data": "Do you want to watch a movie longer than 120 minutes?",
+                            "child":[
+                                {
+                                "id":19,
+                                "data": "Do you want to watch a movie released after 2015?",
+                                "child":[
+                                        {
+                                            "id":20,
+                                            "data":["horror","long_new"]
+                                        },
+                                        {
+                                            "id":21,
+                                            "data":["horror","long_old"]
+                                        }
+                                ]
+                                },
+                                {
+                                    "id":22,
+                                    "data": "Do you want to watch a movie released after 2015?",
+                                    "child":[
+                                        {
+                                            "id":23,
+                                            "data":["horror","short_new"]
+                                        },
+                                        {
+                                            "id":24,
+                                            "data":["horror","short_old"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id":25,
+                            "data":"Do you want to watch a sci-fi movie?",
+                            "child":[
+                                {
+                                    "id":26,
+                                    "data": "Do you want to watch a movie longer than 120 minutes?",
+                                    "child":[
+                                        {
+                                        "id":27,
+                                        "data": "Do you want to watch a movie released after 2015?",
+                                        "child":[
+                                                {
+                                                    "id":28,
+                                                    "data":["sci-fi","long_new"]
+                                                },
+                                                {
+                                                    "id":29,
+                                                    "data":["sci-fi","long_old"]
+                                                }
+                                        ]
+                                        },
+                                        {
+                                            "id":30,
+                                            "data": "Do you want to watch a movie released after 2015?",
+                                            "child":[
+                                                {
+                                                    "id":31,
+                                                    "data":["sci-fi","short_new"]
+                                                },
+                                                {
+                                                    "id":32,
+                                                    "data":["sci-fi","short_old"]
+                                                }
+                                            ]
+                                        }
+                                    ]        
+                                },
+                                {
+                                    "id":33,
+                                    "data":"Do you want to watch a comedy movie?",
+                                    "child":[
+                                        {
+                                            "id":34,
+                                            "data": "Do you want to watch a movie longer than 120 minutes?",
+                                            "child":[
+                                                {
+                                                "id":35,
+                                                "data": "Do you want to watch a movie released after 2015?",
+                                                "child":[
+                                                        {
+                                                            "id":36,
+                                                            "data":["comedy","long_new"]
+                                                        },
+                                                        {
+                                                            "id":37,
+                                                            "data":["comedy","long_old"]
+                                                        }
+                                                ]
+                                                },
+                                                {
+                                                    "id":38,
+                                                    "data": "Do you want to watch a movie released after 2015?",
+                                                    "child":[
+                                                        {
+                                                            "id":39,
+                                                            "data":["comedy","short_new"]
+                                                        },
+                                                        {
+                                                            "id":40,
+                                                            "data":["comedy","short_old"]
+                                                        }
+                                                    ]
+                                                }
+                                            ]        
+                                        },
+                                        {
+                                            "id":41,
+                                            "data": "Do you want to watch a movie longer than 120 minutes?",
+                                            "child":[
+                                                {
+                                                "id":42,
+                                                "data": "Do you want to watch a movie released after 2015?",
+                                                "child":[
+                                                        {
+                                                            "id":43,
+                                                            "data":["other","long_new"]
+                                                        },
+                                                        {
+                                                            "id":44,
+                                                            "data":["other","long_old"]
+                                                        }
+                                                ]
+                                                },
+                                                {
+                                                    "id":45,
+                                                    "data": "Do you want to watch a movie released after 2015?",
+                                                    "child":[
+                                                        {
+                                                            "id":46,
+                                                            "data":["other","short_new"]
+                                                        },
+                                                        {
+                                                            "id":47,
+                                                            "data":["other","short_old"]
+                                                        }
+                                                    ]
+                                                }
+                                            ]        
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                                
+                }
+            ]
+        }
+    ]
+}

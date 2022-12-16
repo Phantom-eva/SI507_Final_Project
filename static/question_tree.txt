@@ -1,0 +1,97 @@
+Internal node
+Do you want to watch an action movie?
+Internal node
+Do you want to watch a movie longer than 120 minutes?
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+action_long_new
+Leaf
+action_long_old
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+action_short_new
+Leaf
+action_short_old
+Internal node
+Do you want to watch an adventure movie?
+Internal node
+Do you want to watch a movie longer than 120 minutes?
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+adventure_long_new
+Leaf
+adventure_long_old
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+adventure_short_new
+Leaf
+adventure_short_old
+Internal node
+Do you want to watch an horror movie?
+Internal node
+Do you want to watch a movie longer than 120 minutes?
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+horror_long_new
+Leaf
+horror_long_old
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+horror_short_new
+Leaf
+horror_short_old
+Internal node
+Do you want to watch an sci-fi movie?
+Internal node
+Do you want to watch a movie longer than 120 minutes?
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+sci-fi_long_new
+Leaf
+sci-fi_long_old
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+sci-fi_short_new
+Leaf
+sci-fi_short_old
+Internal node
+Do you want to watch an comedy movie?
+Internal node
+Do you want to watch a movie longer than 120 minutes?
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+comedy_long_new
+Leaf
+comedy_long_old
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+comedy_short_new
+Leaf
+comedy_short_old
+Internal node
+Do you want to watch a movie longer than 120 minutes?
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+other_long_new
+Leaf
+other_long_old
+Internal node
+Do you want to watch a movie released after 2018?
+Leaf
+other_short_new
+Leaf
+other_short_old
+
+
+
