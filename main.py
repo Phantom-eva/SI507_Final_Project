@@ -113,7 +113,7 @@ def getLocalMovieData():
     while (ans_cache != "yes" and ans_cache != "no"):
         ans_cache = input("Invalid input. Please enter yes or no: ")
     if ans_cache == "yes":
-        file_name = input("Please enter the file name:")
+        file_name = input("Please enter the file name (newest_movie_cache.json):")
         file_location = "./static/" + file_name
         newest_movie = openCache(file = file_location)
     else:
@@ -158,7 +158,7 @@ def showLocalMovieData(newest_movie, newest_movie_list):
     while (ans_cache != "yes" and ans_cache != "no"):
         ans_cache = input("Invalid input. Please enter yes or no: ")
     if ans_cache == "yes":
-        file_name = input("Please enter file name: ")
+        file_name = input("Please enter file name (newest_movie_cache.json): ")
         file_location = "./static/" + file_name
         saveCache(file=file_location,cache_dict = newest_movie)
     print("Do you want to run this system again or exit?")
@@ -179,7 +179,7 @@ def getAllMovieData():
     while(ans_cache != "yes" and ans_cache != "no"):
         ans_cache = input("Invalid input. Please enter yes or no: ")
     if ans_cache == "yes":
-        file_name = input("Please enter file name: ")
+        file_name = input("Please enter file name (all_movie_cache.json): ")
         file_location = "./static/" + file_name
         Movie_List = openCache(file=file_location)
         print("----------use cache-----------")
@@ -269,7 +269,7 @@ def showAllMovieData(movie_list,movie_list_processed):
     while (ans_cache != "yes" and ans_cache != "no"):
         ans_cache = input("Invalid input. Please enter yes or no: ")
     if ans_cache == "yes":
-        file_name = input("Please enter file name: ")
+        file_name = input("Please enter file name (all_movie_cache.json): ")
         file_location = "./static/" + file_name
         saveCache(file=file_location,cache_dict = movie_list)
     print("Do you want to run this system again or exit?")
