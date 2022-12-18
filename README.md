@@ -56,11 +56,11 @@ from api_secrets import TMDB_API_KEY, OMDB_API_KEY, GOOGLE_SEARCH_API_KEY
 
 Question tree:
 
-<img src="F:\UMICH\2022 Fall\SI 507\final_pro\4.png" style="zoom:60%;" />
+<img src="./static/4.png" style="zoom:60%;" />
 
 Movie data:
 
-<img src="F:\UMICH\2022 Fall\SI 507\final_pro\2.png" style="zoom:67%;" />
+<img src="./static/2.png" style="zoom:67%;" />
 
 ### Interaction
 
